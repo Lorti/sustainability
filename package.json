@@ -1,0 +1,20 @@
+{
+  "name": "sustainability",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "debug": "DEBUG=* eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lorti/sustainability.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "github:11ty/eleventy",
+    "storyblok-js-client": "^2.2.0"
+  }
+}
