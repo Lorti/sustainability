@@ -1,0 +1,27 @@
+---
+layout: layouts/default.njk
+title: Deine Spur
+description: Nachhaltig Leben lernen
+permalink: index.html
+---
+<div class="container mx-auto my-4">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, nulla.
+  <h1>Deine Spur</h1>
+  <h2>Nachhaltig Leben lernen</h2>
+  <div class="my-4">
+    {{ introduction | safe }}
+  </div>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, similique!
+  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4">
+    {% for workshop in workshops %}
+      <li>{{ workshop | safe }}</li>
+    {% endfor %}
+  </ul>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, harum!
+  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4">
+    {% for member in team %}
+      <li>{{ member | safe }}</li>
+    {% endfor %}
+  </ul>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, impedit.
+</div>

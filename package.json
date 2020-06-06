@@ -6,7 +6,8 @@
     "build": "eleventy",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
-    "debug": "DEBUG=* eleventy"
+    "debug": "DEBUG=* eleventy",
+    "format": "prettier --single-quote --write '*.js' 'src/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -14,7 +15,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "github:11ty/eleventy",
-    "storyblok-js-client": "^2.2.0"
-  }
+    "@11ty/eleventy": "^0.11.0",
+    "autoprefixer": "^9.8.0",
+    "postcss": "^7.0.32",
+    "prettier": "^2.0.5",
+    "storyblok-js-client": "^2.5.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "dependencies": {}
 }
