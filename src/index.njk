@@ -7,9 +7,9 @@ permalink: index.html
 <nav class="container mx-auto my-4">
   <ul class="flex justify-between max-w-lg mx-auto">
     <li><a href="/">Home</a></li>
-    <li><a href="#workshops">Workshops</a></li>
-    <li><a href="#team">Team</a></li>
-    <li><a href="#kontakt">Kontakt</a></li>
+    <li><a href="#Workshops">Workshops</a></li>
+    <li><a href="#Team">Team</a></li>
+    <li><a href="#Kontakt">Kontakt</a></li>
   </ul>
 </nav>
 <div class="container mx-auto my-4">
@@ -18,8 +18,14 @@ permalink: index.html
   <div class="my-4">
     {{ introduction | safe }}
   </div>
+  <div class="my-4">
+    Wir brauchen nicht <span class="font-bold">Wenige</span>,<br>
+    die <span class="underline">perfekt</span> nachhaltig leben,<br>
+    sondern <span class="font-bold">Viele</span>,<br>
+    die es <span class="underline">unperfekt</span> machen.
+  </div>
   <h2 id="Workshops">Nächste Workshop-Termine</h2>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, quisquam.
+  Mehr Infos zu den Workshops findet ihr auf unserer <a href="https://www.facebook.com/deinespur">Facebook-Seite</a>.
   <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">
     {% for workshop in workshops %}
       <li>{{ workshop | safe }}</li>
@@ -37,5 +43,10 @@ permalink: index.html
     {% endfor %}
   </ul>
   <h2 id="Kontakt">Kontakt</h2>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, impedit.
+  <p>Deine Spur – Nachhaltig Leben lernen</p>
+  <p><a href="mailto:office@deinespur.at">office@deinespur.at</a></p>
+  <p>
+    <a href="https://www.facebook.com/deinespur">fb.com/deinespur</a><br>
+    <a href="https://www.instagram.com/deinespur">instagram.com/deinespur</a>
+  </p>
 </div>
