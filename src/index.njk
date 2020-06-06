@@ -4,24 +4,38 @@ title: Deine Spur
 description: Nachhaltig Leben lernen
 permalink: index.html
 ---
+<nav class="container mx-auto my-4">
+  <ul class="flex justify-between max-w-lg mx-auto">
+    <li><a href="/">Home</a></li>
+    <li><a href="#workshops">Workshops</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+</nav>
 <div class="container mx-auto my-4">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, nulla.
   <h1>Deine Spur</h1>
-  <h2>Nachhaltig Leben lernen</h2>
+  <p>Nachhaltig Leben lernen</p>
   <div class="my-4">
     {{ introduction | safe }}
   </div>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, similique!
-  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4">
+  <h2 id="Workshops">Nächste Workshop-Termine</h2>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, quisquam.
+  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">
     {% for workshop in workshops %}
       <li>{{ workshop | safe }}</li>
     {% endfor %}
   </ul>
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, harum!
-  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-4">
+  <h2 id="Team">Unser Team</h2>
+  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">
     {% for member in team %}
-      <li>{{ member | safe }}</li>
+      <li>
+        <img class="w-full" src="{{ member.picture }}" alt="{{ member.name }}">
+        <div class="my-4">
+          {{ member.biography | safe }}
+        </div>
+      </li>
     {% endfor %}
   </ul>
+  <h2 id="Kontakt">Kontakt</h2>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, impedit.
 </div>

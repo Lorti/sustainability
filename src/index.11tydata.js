@@ -14,13 +14,26 @@ async function getIndex() {
 
   const index = {};
 
-  const introduction = components.find((component) => component.component === 'introduction');
+  const introduction = components.find(
+    (component) => component.component === 'introduction'
+  );
   index.introduction = Storyblok.richTextResolver.render(introduction.text);
 
-  const workshops = components.filter((component) => component.component === 'workshop');
-  index.workshops = workshops.map(workshop => Storyblok.richTextResolver.render(workshop.text))
+  const workshops = components.filter(
+    (component) => component.component === 'workshop'
+  );
+  index.workshops = workshops.map((workshop) =>
+    Storyblok.richTextResolver.render(workshop.text)
+  );
 
-  // const content = transformImages(richText, '960x0');
+  const team = components.filter(
+    (component) => component.component === 'team_member'
+  );
+  index.team = team.map((member) => ({
+    name: member.name,
+    picture: member.picture.filename,
+    biography: Storyblok.richTextResolver.render(member.biography),
+  }));
 
   return index;
 }
