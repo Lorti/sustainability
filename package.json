@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "eleventy",
+    "build": "NODE_ENV=production eleventy",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
     "debug": "DEBUG=* eleventy",
