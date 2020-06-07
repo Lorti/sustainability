@@ -3,6 +3,7 @@ const postcss = require('postcss');
 const fs = require('fs');
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy({ static: '.' });
   eleventyConfig.addWatchTarget('./src/index.css');
 
   eleventyConfig.addNunjucksAsyncShortcode('styles', async () => {

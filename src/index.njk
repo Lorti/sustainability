@@ -1,52 +1,87 @@
 ---
 layout: layouts/default.njk
 title: Deine Spur
-description: Nachhaltig Leben lernen
+description: Nachhaltig leben lernen
 permalink: index.html
 ---
-<nav class="container mx-auto my-4">
-  <ul class="flex justify-between max-w-lg mx-auto">
-    <li><a href="/">Home</a></li>
-    <li><a href="#Workshops">Workshops</a></li>
-    <li><a href="#Team">Team</a></li>
-    <li><a href="#Kontakt">Kontakt</a></li>
-  </ul>
+<nav class="sticky top-0 p-4">
+  <div class="container text-lg sm:text-xl lg:text-2xl mx-auto">
+    <div class="flex sm:pr-16">
+      <a class="hidden sm:block no-underline" href="/">
+        <img class="block w-16 h-auto" src="logo.png" alt="Deine Spur">
+      </a>
+      <div class="flex flex-grow items-center">
+        <ul class="flex justify-between w-full max-w-sm lg:max-w-lg mx-auto">
+          <li><a class="block no-underline" href="/">Home</a></li>
+          <li><a class="block no-underline" href="#Workshops">Workshops</a></li>
+          <li><a class="block no-underline" href="#Team">Team</a></li>
+          <li><a class="block no-underline" href="#Kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </nav>
-<div class="container mx-auto my-4">
-  <h1>Deine Spur</h1>
-  <p>Nachhaltig Leben lernen</p>
-  <div class="my-4">
+
+<div class="container text-lg sm:text-xl lg:text-2xl mx-auto px-4">
+  <div class="text-center my-24">
+    <img class="block mx-auto mb-4" src="logo.png" alt="Deine Spur">
+    <h1 class="text-5xl leading-normal m-0">Deine Spur</h1>
+    <p class="text-4xl leading-none m-0">Nachhaltig leben lernen</p>
+  </div>
+
+  <div class="max-w-4xl mx-auto my-16">
     {{ introduction | safe }}
   </div>
-  <div class="my-4">
-    Wir brauchen nicht <span class="font-bold">Wenige</span>,<br>
-    die <span class="underline">perfekt</span> nachhaltig leben,<br>
-    sondern <span class="font-bold">Viele</span>,<br>
-    die es <span class="underline">unperfekt</span> machen.
+
+  <div class="flex items-end justify-center mt-24 mb-32">
+    <img class="hidden md:block md:w-32 lg:w-40 xl:w-auto mr-4" src="leaves-left.png">
+    <div class="text-center leading-tight text-2xl sm:text-4xl lg:text-4xl xl:text-5xl">
+      Wir brauchen nicht <span class="font-bold">Wenige</span>,<br>
+      die <span class="underline-green">perfekt</span> nachhaltig leben,<br>
+      sondern <span class="font-bold">Viele</span>,<br>
+      die es <span class="underline-green">unperfekt</span> machen.
+    </div>
+    <img class="hidden md:block md:w-32 lg:w-40 xl:w-auto ml-4" src="leaves-right.png">
   </div>
-  <h2 id="Workshops">Nächste Workshop-Termine</h2>
-  Mehr Infos zu den Workshops findet ihr auf unserer <a href="https://www.facebook.com/deinespur">Facebook-Seite</a>.
-  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">
-    {% for workshop in workshops %}
-      <li>{{ workshop | safe }}</li>
-    {% endfor %}
-  </ul>
-  <h2 id="Team">Unser Team</h2>
-  <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-4">
-    {% for member in team %}
-      <li>
-        <img class="w-full" src="{{ member.picture }}" alt="{{ member.name }}">
-        <div class="my-4">
-          {{ member.biography | safe }}
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
-  <h2 id="Kontakt">Kontakt</h2>
-  <p>Deine Spur – Nachhaltig Leben lernen</p>
-  <p><a href="mailto:office@deinespur.at">office@deinespur.at</a></p>
-  <p>
-    <a href="https://www.facebook.com/deinespur">fb.com/deinespur</a><br>
-    <a href="https://www.instagram.com/deinespur">instagram.com/deinespur</a>
-  </p>
+
+  <div id="Workshops" class="text-center my-24">
+    <img class="block w-auto h-16 mx-auto" src="logo.png">
+    <h2 class="lg:text-3xl mt-12">Nächste Workshop-Termine</h2>
+    <p class="my-4">Mehr Infos zu den Workshops findet ihr auf unserer <a href="https://www.facebook.com/deinespur">Facebook-Seite</a>.</p>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 my-16">
+      {% for workshop in workshops %}
+        <li class="text-left">
+          {{ workshop | safe }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div id="Team" class="text-center my-24">
+    <img class="block w-auto h-16 mx-auto" src="logo.png">
+    <h2 class="lg:text-3xl mt-12">Unser Team</h2>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 my-16">
+      {% for member in team %}
+        <li>
+          <img class="w-full" src="{{ member.picture }}" alt="{{ member.name }}">
+          <div class="text-left my-12">
+            {{ member.biography | safe }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div id="Kontakt" class="text-center my-24">
+    <img class="block w-auto h-16 mx-auto" src="logo.png">
+    <h2 class="lg:text-3xl mt-12">Kontakt</h2>
+    <p class="my-4">Deine Spur – Nachhaltig leben lernen</p>
+    <p class="my-4">
+      <a href="mailto:office@deinespur.at">office@deinespur.at</a>
+    </p>
+    <p class="my-4">
+      <a href="https://www.facebook.com/deinespur">fb.com/deinespur</a><br>
+      <a href="https://www.instagram.com/deinespur">instagram.com/deinespur</a>
+    </p>
+  </div>
 </div>

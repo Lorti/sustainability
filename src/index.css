@@ -1,5 +1,23 @@
 @tailwind base;
 
+html {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+h1,
+h2,
+h3,
+b,
+strong {
+  font-weight: bold;
+}
+
+body,
+nav {
+  background: url(background.jpg) repeat;
+}
+
 h1 {
   @apply text-2xl;
 }
@@ -16,8 +34,8 @@ a {
   @apply underline;
 }
 
-p {
-  @apply my-4;
+.underline-green {
+  text-decoration: underline #3aaa35;
 }
 
 @tailwind components;
