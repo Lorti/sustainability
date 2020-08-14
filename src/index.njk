@@ -44,6 +44,7 @@ permalink: index.html
     <img class="hidden md:block md:w-32 lg:w-40 xl:w-auto ml-4" src="leaves-right.png">
   </div>
 
+  {% if workshops.length %}
   <div id="Workshops" class="text-center my-24">
     <img class="block w-auto h-16 mx-auto" src="logo.png">
     <h2 class="lg:text-3xl mt-12">Nächste Workshop-Termine</h2>
@@ -56,6 +57,7 @@ permalink: index.html
       {% endfor %}
     </ul>
   </div>
+  {% endif %}
 
   <div id="Team" class="text-center my-24">
     <img class="block w-auto h-16 mx-auto" src="logo.png">
