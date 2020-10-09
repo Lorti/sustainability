@@ -65,7 +65,7 @@ permalink: index.html
       {% for workshop in workshops %}
         <li>
           <img class="block w-24 mx-auto mb-8" src="{{ workshop.picture }}">
-          <h3 class="lg:text-3xl mb-4">{{ workshop.title }}</h3>
+          <h3 class="lg:text-3xl mb-4 text-center">{{ workshop.title }}</h3>
           {{ workshop.description | safe }}
           <p><a href="mailto:office@deinespur.at?subject={{workshop.title}}">Jetzt Workshop vereinbaren</a></p>
         </li>
