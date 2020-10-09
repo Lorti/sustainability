@@ -44,20 +44,37 @@ permalink: index.html
     <img class="hidden md:block md:w-32 lg:w-40 xl:w-auto ml-4" src="leaves-right.png">
   </div>
 
-  {% if workshops.length %}
-  <div id="Workshops" class="text-center my-24">
+  <style>
+    ul:not(.grid) li {
+      margin-left: 2.5rem;
+    }
+    ul:not(.grid) li img[aria-hidden="true"] {
+      margin-left: -2.5rem;
+      float: left;
+      height: 18px;
+      margin-top: 9px;
+    }
+  </style>
+
+  <div id="Workshops" class="max-w-5xl mx-auto my-24">
     <img class="block w-auto h-16 mx-auto" src="logo.png">
-    <h2 class="lg:text-3xl mt-12">Nächste Workshop-Termine</h2>
-    <p class="my-4">Mehr Infos zu den Workshops findet ihr auf unserer <a href="https://www.facebook.com/deinespur">Facebook-Seite</a>.</p>
-    <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 my-16">
+    <div class="max-w-4xl mx-auto my-12">
+      {{ beforeWorkshopBlock | safe }}
+    </div>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-12 my-16">
       {% for workshop in workshops %}
         <li class="text-left">
-          {{ workshop | safe }}
+          <img class="block w-24 mx-auto mb-8" src="{{ workshop.picture }}">
+          <h3 class="lg:text-3xl mb-4">{{ workshop.title }}</h3>
+          {{ workshop.description | safe }}
+          <p><a href="mailto:office@deinespur.at?subject={{workshop.title}}">Jetzt Workshop vereinbaren</a></p>
         </li>
       {% endfor %}
     </ul>
+    <div class="max-w-4xl mx-auto my-12">
+      {{ afterWorkshopBlock | safe }}
+    </div>
   </div>
-  {% endif %}
 
   <div id="Team" class="text-center my-24">
     <img class="block w-auto h-16 mx-auto" src="logo.png">
