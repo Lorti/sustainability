@@ -29,7 +29,7 @@ permalink: index.html
     <p class="text-4xl leading-none m-0">Nachhaltig leben lernen</p>
   </div>
 
-  <div class="max-w-4xl mx-auto my-16">
+  <div class="max-w-4xl mx-auto my-16 rich-text">
     {{ introduction | safe }}
   </div>
 
@@ -45,10 +45,10 @@ permalink: index.html
   </div>
 
   <style>
-    ul:not(.grid) li {
+    .rich-text li {
       margin-left: 2.5rem;
     }
-    ul:not(.grid) li img[aria-hidden="true"] {
+    .rich-text li img[aria-hidden="true"] {
       margin-left: -2.5rem;
       float: left;
       height: 18px;
@@ -58,12 +58,12 @@ permalink: index.html
 
   <div id="Workshops" class="max-w-5xl mx-auto my-24">
     <img class="block w-auto h-16 mx-auto" src="logo.png">
-    <div class="max-w-4xl mx-auto my-12">
+    <div class="max-w-4xl mx-auto my-12 rich-text">
       {{ beforeWorkshopBlock | safe }}
     </div>
     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-12 my-16">
       {% for workshop in workshops %}
-        <li class="text-left">
+        <li>
           <img class="block w-24 mx-auto mb-8" src="{{ workshop.picture }}">
           <h3 class="lg:text-3xl mb-4">{{ workshop.title }}</h3>
           {{ workshop.description | safe }}
@@ -71,7 +71,7 @@ permalink: index.html
         </li>
       {% endfor %}
     </ul>
-    <div class="max-w-4xl mx-auto my-12">
+    <div class="max-w-4xl mx-auto my-12 rich-text">
       {{ afterWorkshopBlock | safe }}
     </div>
   </div>
