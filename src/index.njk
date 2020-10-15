@@ -4,7 +4,7 @@ title: Deine Spur
 description: Nachhaltig leben lernen
 permalink: index.html
 ---
-<nav class="sticky top-0 p-4">
+<nav class="sticky top-0 p-4 z-10">
   <div class="container text-lg sm:text-xl lg:text-2xl mx-auto">
     <div class="flex sm:pr-16">
       <a class="hidden sm:block no-underline" href="/">
@@ -54,12 +54,39 @@ permalink: index.html
       height: 18px;
       margin-top: 9px;
     }
+    [style*="--aspect-ratio"] > :first-child {
+      width: 100%;
+    }
+    [style*="--aspect-ratio"] > img {
+      height: auto;
+    }
+    @supports (--custom:property) {
+      [style*="--aspect-ratio"] {
+        position: relative;
+      }
+      [style*="--aspect-ratio"]::before {
+        content: "";
+        display: block;
+        padding-bottom: calc(100% / (var(--aspect-ratio)));
+      }
+      [style*="--aspect-ratio"] > :first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    }
   </style>
 
   <div id="Workshops" class="max-w-5xl mx-auto my-24">
     <img class="block w-auto h-16 mx-auto" src="logo.png">
     <div class="max-w-4xl mx-auto my-12 rich-text">
       {{ beforeWorkshopBlock | safe }}
+    </div>
+    <div style="--aspect-ratio: 16/9;">
+      <iframe width="640" height="360" src="https://www.youtube.com/embed/q2Pkm7kEWOk"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
     </div>
     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-12 my-16">
       {% for workshop in workshops %}
